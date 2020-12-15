@@ -41,6 +41,10 @@ function select_box_faculty(faculty) {
 }
 
 $(document).ready(function () {
+    //force input only number and dot
+    $('input').keypress(function(evt){
+        return (/^[0-9]*\.?[0-9]*$/).test($(this).val()+evt.key);
+    });
 
     const stepper = new mdb.Stepper(document.getElementById('stepper-buttons'));
 
