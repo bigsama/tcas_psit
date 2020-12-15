@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>TCAS Analytics</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+</head>
+
+<body class="align">
+    <div class="loader-container">
+        <div class="spinner-border text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                <img class="mb-3" src="img/logo.png" width="20%" />
+                <section class="border p- d-flex justify-content-center mb-4">
+                    <ul class="stepper stepper-horizontal" id="stepper-buttons" style="height: 154px;">
+                        <li class="stepper-step stepper-completed">
+                            <div class="stepper-head" tabindex="0">
+                                <span class="stepper-head-icon">
+                                    <i class="fas fa-university"></i>
+                                </span>
+                                <span class="stepper-head-text">
+                                    เลือกคณะ / สาขา
+                                </span>
+                            </div>
+                            <div class="stepper-content py-3 fade-in-left animation fast" style="display: block;">
+                                <div class="row">
+                                    <div class="col-12 mb-4">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <h5>อันดับที่ 1</h5>
+                                            </div>
+                                            <div class="col-5">
+                                                <select class="select faculty_1" data-filter="true">
+                                                    <option value>เลือกคณะ</option>
+                                                    <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์</option>
+                                                    <option value="คณะสถาปัตยกรรมศาสตร์">คณะสถาปัตยกรรมศาสตร์</option>
+                                                    <option value="คณะครุศาสตร์อุตสาหกรรม">คณะครุศาสตร์อุตสาหกรรม
+                                                    </option>
+                                                    <option value="คณะเทคโนโลยีการเกษตร">คณะเทคโนโลยีการเกษตร</option>
+                                                    <option value="คณะวิทยาศาสตร์">คณะวิทยาศาสตร์</option>
+                                                    <option value="คณะเทคโนโลยีสารสนเทศ">คณะเทคโนโลยีสารสนเทศ</option>
+                                                    <option value="คณะอุตสาหกรรมเกษตร">คณะอุตสาหกรรมเกษตร</option>
+                                                    <option value="คณะบริหารธุรกิจ">คณะบริหารธุรกิจ</option>
+                                                    <option value="คณะศิลปศาสตร์">คณะศิลปศาสตร์</option>
+                                                    <option value="วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง">
+                                                        วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง</option>
+                                                    <option value="วิทยาลัยนวัตกรรมการผลิตขั้นสูง">
+                                                        วิทยาลัยนวัตกรรมการผลิตขั้นสูง</option>
+                                                    <option value="วิทยาลัยอุตสาหกรรมการบินนานาชาติ">
+                                                        วิทยาลัยอุตสาหกรรมการบินนานาชาติ</option>
+                                                    <option value="วิทยาเขตชุมพรเขตรอุดมศักดิ์">
+                                                        วิทยาเขตชุมพรเขตรอุดมศักดิ์</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-5">
+                                                <select class="select major_1" data-filter="true">
+                                                    <option value>เลือกสาขา</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-4">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <h5>อันดับที่ 2</h5>
+                                            </div>
+                                            <div class="col-5">
+                                                <select class="select faculty_2" data-filter="true">
+                                                    <option value>เลือกคณะ</option>
+                                                    <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์</option>
+                                                    <option value="คณะสถาปัตยกรรมศาสตร์">คณะสถาปัตยกรรมศาสตร์</option>
+                                                    <option value="คณะครุศาสตร์อุตสาหกรรม">คณะครุศาสตร์อุตสาหกรรม
+                                                    </option>
+                                                    <option value="คณะเทคโนโลยีการเกษตร">คณะเทคโนโลยีการเกษตร</option>
+                                                    <option value="คณะวิทยาศาสตร์">คณะวิทยาศาสตร์</option>
+                                                    <option value="คณะเทคโนโลยีสารสนเทศ">คณะเทคโนโลยีสารสนเทศ</option>
+                                                    <option value="คณะอุตสาหกรรมเกษตร">คณะอุตสาหกรรมเกษตร</option>
+                                                    <option value="คณะบริหารธุรกิจ">คณะบริหารธุรกิจ</option>
+                                                    <option value="คณะศิลปศาสตร์">คณะศิลปศาสตร์</option>
+                                                    <option value="วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง">
+                                                        วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง</option>
+                                                    <option value="วิทยาลัยนวัตกรรมการผลิตขั้นสูง">
+                                                        วิทยาลัยนวัตกรรมการผลิตขั้นสูง</option>
+                                                    <option value="วิทยาลัยอุตสาหกรรมการบินนานาชาติ">
+                                                        วิทยาลัยอุตสาหกรรมการบินนานาชาติ</option>
+                                                    <option value="วิทยาเขตชุมพรเขตรอุดมศักดิ์">
+                                                        วิทยาเขตชุมพรเขตรอุดมศักดิ์</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-5">
+                                                <select class="select major_2" data-filter="true">
+                                                    <option value>เลือกสาขา</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-4">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <h5>อันดับที่ 3</h5>
+                                            </div>
+                                            <div class="col-5">
+                                                <select class="select faculty_3" data-filter="true">
+                                                    <option value>เลือกคณะ</option>
+                                                    <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์</option>
+                                                    <option value="คณะสถาปัตยกรรมศาสตร์">คณะสถาปัตยกรรมศาสตร์</option>
+                                                    <option value="คณะครุศาสตร์อุตสาหกรรม">คณะครุศาสตร์อุตสาหกรรม
+                                                    </option>
+                                                    <option value="คณะเทคโนโลยีการเกษตร">คณะเทคโนโลยีการเกษตร</option>
+                                                    <option value="คณะวิทยาศาสตร์">คณะวิทยาศาสตร์</option>
+                                                    <option value="คณะเทคโนโลยีสารสนเทศ">คณะเทคโนโลยีสารสนเทศ</option>
+                                                    <option value="คณะอุตสาหกรรมเกษตร">คณะอุตสาหกรรมเกษตร</option>
+                                                    <option value="คณะบริหารธุรกิจ">คณะบริหารธุรกิจ</option>
+                                                    <option value="คณะศิลปศาสตร์">คณะศิลปศาสตร์</option>
+                                                    <option value="วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง">
+                                                        วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง</option>
+                                                    <option value="วิทยาลัยนวัตกรรมการผลิตขั้นสูง">
+                                                        วิทยาลัยนวัตกรรมการผลิตขั้นสูง</option>
+                                                    <option value="วิทยาลัยอุตสาหกรรมการบินนานาชาติ">
+                                                        วิทยาลัยอุตสาหกรรมการบินนานาชาติ</option>
+                                                    <option value="วิทยาเขตชุมพรเขตรอุดมศักดิ์">
+                                                        วิทยาเขตชุมพรเขตรอุดมศักดิ์</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-5">
+                                                <select class="select major_3" data-filter="true">
+                                                    <option value>เลือกสาขา</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-4">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <h5>อันดับที่ 4</h5>
+                                            </div>
+                                            <div class="col-5">
+                                                <select class="select faculty_4" data-filter="true">
+                                                    <option value>เลือกคณะ</option>
+                                                    <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์</option>
+                                                    <option value="คณะสถาปัตยกรรมศาสตร์">คณะสถาปัตยกรรมศาสตร์</option>
+                                                    <option value="คณะครุศาสตร์อุตสาหกรรม">คณะครุศาสตร์อุตสาหกรรม
+                                                    </option>
+                                                    <option value="คณะเทคโนโลยีการเกษตร">คณะเทคโนโลยีการเกษตร</option>
+                                                    <option value="คณะวิทยาศาสตร์">คณะวิทยาศาสตร์</option>
+                                                    <option value="คณะเทคโนโลยีสารสนเทศ">คณะเทคโนโลยีสารสนเทศ</option>
+                                                    <option value="คณะอุตสาหกรรมเกษตร">คณะอุตสาหกรรมเกษตร</option>
+                                                    <option value="คณะบริหารธุรกิจ">คณะบริหารธุรกิจ</option>
+                                                    <option value="คณะศิลปศาสตร์">คณะศิลปศาสตร์</option>
+                                                    <option value="วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง">
+                                                        วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง</option>
+                                                    <option value="วิทยาลัยนวัตกรรมการผลิตขั้นสูง">
+                                                        วิทยาลัยนวัตกรรมการผลิตขั้นสูง</option>
+                                                    <option value="วิทยาลัยอุตสาหกรรมการบินนานาชาติ">
+                                                        วิทยาลัยอุตสาหกรรมการบินนานาชาติ</option>
+                                                    <option value="วิทยาเขตชุมพรเขตรอุดมศักดิ์">
+                                                        วิทยาเขตชุมพรเขตรอุดมศักดิ์</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-5">
+                                                <select class="select major_4" data-filter="true">
+                                                    <option value>เลือกสาขา</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-4">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <h5>อันดับที่ 5</h5>
+                                            </div>
+                                            <div class="col-5">
+                                                <select class="select faculty_5" data-filter="true">
+                                                    <option value>เลือกคณะ</option>
+                                                    <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์</option>
+                                                    <option value="คณะสถาปัตยกรรมศาสตร์">คณะสถาปัตยกรรมศาสตร์</option>
+                                                    <option value="คณะครุศาสตร์อุตสาหกรรม">คณะครุศาสตร์อุตสาหกรรม
+                                                    </option>
+                                                    <option value="คณะเทคโนโลยีการเกษตร">คณะเทคโนโลยีการเกษตร</option>
+                                                    <option value="คณะวิทยาศาสตร์">คณะวิทยาศาสตร์</option>
+                                                    <option value="คณะเทคโนโลยีสารสนเทศ">คณะเทคโนโลยีสารสนเทศ</option>
+                                                    <option value="คณะอุตสาหกรรมเกษตร">คณะอุตสาหกรรมเกษตร</option>
+                                                    <option value="คณะบริหารธุรกิจ">คณะบริหารธุรกิจ</option>
+                                                    <option value="คณะศิลปศาสตร์">คณะศิลปศาสตร์</option>
+                                                    <option value="วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง">
+                                                        วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง</option>
+                                                    <option value="วิทยาลัยนวัตกรรมการผลิตขั้นสูง">
+                                                        วิทยาลัยนวัตกรรมการผลิตขั้นสูง</option>
+                                                    <option value="วิทยาลัยอุตสาหกรรมการบินนานาชาติ">
+                                                        วิทยาลัยอุตสาหกรรมการบินนานาชาติ</option>
+                                                    <option value="วิทยาเขตชุมพรเขตรอุดมศักดิ์">
+                                                        วิทยาเขตชุมพรเขตรอุดมศักดิ์</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-5">
+                                                <select class="select major_5" data-filter="true">
+                                                    <option value>เลือกสาขา</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="stepper-step stepper-completed">
+                            <div class="stepper-head" tabindex="1">
+                                <span class="stepper-head-icon">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <span class="stepper-head-text">
+                                    GPA / คะแนน GAT
+                                </span>
+                            </div>
+                            <div class="stepper-content py-3 fade-in-left animation fast" style="display: block;">
+                                <section class="mb-4 d-flex justify-content-center">
+                                    <div style="width: 60rem;">
+                                        <form class="needs-validation" novalidate="">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="gpa"
+                                                    class="form-control form-control-lg" />
+                                                <label class="form-label" for="formControlLg">GPA (เกรดเฉลี่ย)</label>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="gat"
+                                                            class="form-control form-control-lg" />
+                                                        <label class="form-label" for="formControlLg">GAT
+                                                            (ความถนัดทั่วไป)</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="gatth"
+                                                            class="form-control form-control-lg" />
+                                                        <label class="form-label" for="formControlLg">GAT
+                                                            (ภาษาไทย)</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="gateng"
+                                                            class="form-control form-control-lg" />
+                                                        <label class="form-label" for="formControlLg">GAT
+                                                            (ภาษาอังกฤษ)</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </section>
+                            </div>
+                        </li>
+                        <li class="stepper-step stepper-completed">
+                            <div class="stepper-head" tabindex="1">
+                                <span class="stepper-head-icon">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <span class="stepper-head-text">
+                                    คะแนน ONET
+                                </span>
+                            </div>
+                            <div class="stepper-content py-3 fade-in-left animation fast" style="display: block;">
+                                <form class="needs-validation" novalidate="">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="oth"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">01 ภาษาไทย</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="osc"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">02 สังคมศึกษา</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="oeng"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">03 ภาษาอังกฤษ</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="omath"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">04 คณิตศาสตร์</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="osci"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">05 วิทยาศาสตร์</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                        <li class="stepper-step stepper-completed">
+                            <div class="stepper-head" tabindex="1">
+                                <span class="stepper-head-icon">
+                                    <i class="fas fa-file"></i>
+                                </span>
+                                <span class="stepper-head-text">
+                                    คะแนน PAT
+                                </span>
+                            </div>
+                            <div class="stepper-content py-3 fade-in-left animation fast" style="display: block;">
+                                <form class="needs-validation" novalidate="">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="pat1"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">1 คณิตศาสตร์</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="pat2"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">2 วิทยาศาสตร์</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="pat3"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">3 วิศวกรรม</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="pat4"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">4 สถาปัตยกรรม</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="pat5"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">5 วิชาชีพครู</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="pat6"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">6 ศิลปกรรม</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="pat71"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">71 ภาษาฝรั่งเศส</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="pat72"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">72 ภาษาเยอรมัน</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="pat73"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">73 ภาษาญี่ปุ่น</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="pat74"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">74 ภาษาจีน</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="pat75"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">75 ภาษาอาหรับ</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="pat76"
+                                                    class="form-control form-control-md" />
+                                                <label class="form-label" for="formControlLg">76 ภาษาบาลี</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                        <li class="stepper-step stepper-completed">
+                            <div class="stepper-head" tabindex="1">
+                                <span class="stepper-head-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </span>
+                                <span class="stepper-head-text">
+                                    คำนวณ
+                                </span>
+                            </div>
+                            <div class="stepper-content py-3 fade-in-left animation fast" style="display: block;">
+                                <button type="button" onclick="process()" data-toggle="animation" data-animation-target="#process" class="btn btn-success btn-lg btn-block"><i
+                                        class="fas fa-calculator"></i>&nbsp;เริ่มคำนวณ</button>
+                                <section class="border mt-4 mb-4 p-4">
+                                    <div id="process-info" style="display: block;">
+                                        <div class="row mt-4">
+                                            <div class="col-md-6 mb-4">
+                                                <table id="process" class="table table-hover" data-animation="zoom-in" data-animation-start="onClick">
+                                                    <thead class="blue-grey lighten-4">
+                                                        <tr>
+                                                            <th>อันดับ</th>
+                                                            <th>คณะ</th>
+                                                            <th>สาขา</th>
+                                                            <th>คะแนน</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    </tbody>
+                                                    <!-- Table body -->
+                                                </table>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="card border border-warning">
+                                                    <div class="card-body">
+                                                        <div class="process-info">
+                                                            <img class="emotion" src="https://www.flaticon.com/svg/static/icons/svg/3707/3707007.svg"
+                                                                width="15%">
+                                                            <h4 class="top-text mt-4">??????????</h4>
+                                                            <h2><span id="score" class="badge bg-warning">??.??%</span></h2>
+                                                            <h5 id="fac_major_first" style="font-weight: bold">??????????
+                                                                ??????????</h5>
+                                                            <p id="process_desc">??????????????????????????????????????????????????????????????????????????????????????????????????????????????????.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <div class="row mb-4">
+                    <div class="col-6">
+                        <button id="prev-step" class="btn btn-primary btn-block btn-sm mr-2">ย้อนกลับ</button>
+                    </div>
+                    <div class="col-6">
+                        <button id="next-step" class="btn btn-primary btn-block btn-sm mr-2">ถัดไป</button>
+                    </div>
+                </div>
+                <small>PSIT Project, IT @KMITL.</small>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+</html>
