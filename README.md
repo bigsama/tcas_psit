@@ -7,5 +7,5 @@ pip install -r requirements.txt
 
 ##Build ไฟล์
 ```
-pip install -r requirements.txt
+python -m eel main.py static -n [ชื่อไฟล์] --icon icon.ico --noconsole --onefile
 ```
